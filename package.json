@@ -5,6 +5,10 @@
   "icon": "assets/icon.png",
   "author": "Ryan Bright <ryan@moonriselabs.ai>",
   "license": "MIT",
+  "scripts": {
+    "preinstall": "npx only-allow bun",
+    "prepare": "husky"
+  },
   "commands": [
     {
       "name": "tunnel",

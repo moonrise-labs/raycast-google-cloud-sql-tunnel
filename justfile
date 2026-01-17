@@ -20,7 +20,7 @@ lint *args:
 # Run type checking
 [group('lint')]
 typecheck:
-  bun run tsc --noEmit
+  bun run tsc --noEmit -p tsconfig.json
 
 # Run tests
 [group('test')]

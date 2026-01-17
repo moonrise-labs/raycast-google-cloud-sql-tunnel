@@ -1,6 +1,3 @@
-import { dirname } from 'node:path';
-import { fileURLToPath } from 'node:url';
-
 import jsPlugin from '@eslint/js';
 import jsonPlugin from '@eslint/json';
 import markdownPlugin from '@eslint/markdown';
@@ -10,20 +7,11 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import unusedImports from 'eslint-plugin-unused-imports';
 import typescriptPlugin from 'typescript-eslint';
 
-const rootDir = dirname(fileURLToPath(import.meta.url));
 const sourceFiles = ['src/**/*.{ts,tsx}'];
 
 const typeCheckedConfigs = typescriptPlugin.configs.strict.map((config) => ({
   ...config,
   files: sourceFiles,
-  languageOptions: {
-    ...config.languageOptions,
-    parserOptions: {
-      ...(config.languageOptions?.parserOptions ?? {}),
-      projectService: true,
-      tsconfigRootDir: rootDir,
-    },
-  },
 }));
 
 const stylisticTypeCheckedConfigs = typescriptPlugin.configs.stylistic.map((config) => ({
