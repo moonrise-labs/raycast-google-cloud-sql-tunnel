@@ -1,0 +1,68 @@
+{
+  "[javascript][javascriptreact][typescript][typescriptreact]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    },
+    "editor.indentSize": 2,
+    "editor.rulers": [120],
+    "editor.suggest.showSnippets": false
+  },
+  "[json][jsonc]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.indentSize": 2,
+    "editor.rulers": [80]
+  },
+  "[just]": {
+    "editor.defaultFormatter": "nefrob.vscode-just-syntax",
+    "editor.formatOnSave": true,
+    "editor.indentSize": 2,
+    "editor.rulers": [80]
+  },
+  "[markdown]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    },
+    "editor.indentSize": 2,
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "other": "off",
+      "strings": "off"
+    },
+    "editor.wordWrap": "off"
+  },
+  "[shellscript]": {
+    "editor.indentSize": 2,
+    "editor.rulers": [80],
+    "files.eol": "\n"
+  },
+  "editor.formatOnSave": false,
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "eslint.lintTask.enable": true,
+  "eslint.run": "onSave",
+  "eslint.useFlatConfig": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "json",
+    "jsonc",
+    "markdown",
+    "typescript",
+    "typescriptreact"
+  ],
+  "files.exclude": {
+    "**/*.map.js": true,
+    "**/.DS_Store": true,
+    "**/.coverage": true,
+    "**/.git": true,
+    "**/coverage": true,
+    "**/dist": true,
+    "**/node_modules": true
+  },
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.tsdk": "node_modules/typescript/lib"
+}

@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "ecmel.vscode-html-css",
+    "esbenp.prettier-vscode",
+    "nefrob.vscode-just-syntax",
+    "timonwong.shellcheck",
+    "vitest.explorer"
+  ]
+}
