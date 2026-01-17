@@ -15,8 +15,6 @@ import { useEffect, useMemo, useState } from 'react';
 import { labelForStatus, normalizeConfig, type Preferences, type TunnelConfig, type TunnelStatus } from './tunnel-core';
 import { getStatusInfo, openLogFile, startTunnel, type StatusInfo, stopTunnel } from './tunnel-service';
 
-const STATUS_ICON = Icon.HardDrive;
-
 export default function Command() {
   const config = useConfig();
   const isBackground = environment.launchType === LaunchType.Background;
@@ -227,12 +225,12 @@ function buildTooltip(config: TunnelConfig, status: TunnelStatus): string {
 function iconForStatus(status: TunnelStatus): { source: Icon; tintColor: Color } {
   switch (status) {
     case 'connected':
-      return { source: STATUS_ICON, tintColor: Color.Green };
+      return { source: Icon.CircleProgress100, tintColor: Color.PrimaryText };
     case 'starting':
-      return { source: STATUS_ICON, tintColor: Color.Yellow };
+      return { source: Icon.CircleProgress25, tintColor: Color.PrimaryText };
     case 'error':
-      return { source: STATUS_ICON, tintColor: Color.Red };
+      return { source: Icon.CircleDisabled, tintColor: Color.PrimaryText };
     default:
-      return { source: STATUS_ICON, tintColor: Color.SecondaryText };
+      return { source: Icon.Circle, tintColor: Color.SecondaryText };
   }
 }
