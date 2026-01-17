@@ -1,5 +1,5 @@
 {
-  "name": "@moonrise-labs/raycast-google-cloud-sql-tunnel",
+  "name": "raycast-google-cloud-sql-tunnel",
   "title": "Google Cloud SQL Tunnel",
   "description": "Raycast menu bar command to start and stop a Google Cloud SQL IAP tunnel via gcloud.",
   "icon": "assets/icon.png",
