@@ -1,0 +1,58 @@
+################################################################################
+# Configuration
+################################################################################
+
+ci:
+  - changed-files:
+      - any-glob-to-any-file:
+          - .github/*
+          - .github/**/*
+          - renovate.json
+
+devex:
+  - changed-files:
+      - any-glob-to-any-file:
+          - .husky/*
+          - .vscode/*
+          - .editorconfig
+          - .envrc
+          - .gitattributes
+          - .gitignore
+          - .lintstagedrc.js
+          - .nvmrc
+          - .prettierignore
+          - AGENTS.md
+          - bun.lock
+          - commitlint.config.js
+          - eslint.config.js
+          - justfile
+          - prettier.config.js
+          - vitest.config.ts
+
+security:
+  - changed-files:
+      - any-glob-to-any-file:
+          - CODEOWNERS
+
+################################################################################
+# Dependencies
+################################################################################
+
+dependencies:
+  - changed-files:
+      - any-glob-to-any-file:
+          - .bun-version
+          - bun.lock
+          - '**/bun.lock'
+          - package.json
+          - '**/package.json'
+
+################################################################################
+# Documentation
+################################################################################
+
+docs:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '*.md'
+          - '**/*.md'

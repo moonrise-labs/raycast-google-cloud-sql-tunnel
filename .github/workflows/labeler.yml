@@ -1,0 +1,22 @@
+name: Pull Request Labeler
+on:
+- pull_request_target
+
+jobs:
+  labeler:
+    name: Label Pull Request
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+
+      - name: Label Pull Request
+        uses: actions/labeler@634933edcd8ababfe52f92936142cc22ac488b1b # v6
+        with:
+          repo-token: '${{ secrets.GITHUB_TOKEN }}'
+          sync-labels: true
