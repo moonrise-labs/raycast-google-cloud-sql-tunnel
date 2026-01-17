@@ -1,0 +1,15 @@
+# Node.js
+build/
+**/build/
+.bun-tmp/
+dist/
+**/dist/
+node_modules/
+**/node_modules/
+
+# Test Coverage
+.coverage
+coverage
+
+# Workspace
+.husky/

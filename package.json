@@ -1,10 +1,63 @@
 {
-  "name": "raycast-google-iap",
-  "title": "Google IAP Tunnel",
-  "description": "Start/stop a gcloud IAP database tunnel from the menu bar.",
+  "name": "@moonrise-labs/raycast-google-cloud-sql-tunnel",
+  "title": "Google Cloud SQL Tunnel",
+  "description": "Raycast menu bar command to start and stop a Google Cloud SQL IAP tunnel via gcloud.",
   "icon": "assets/icon.png",
-  "author": "moonrise-labs",
+  "author": "Ryan Bright <ryan@moonriselabs.ai>",
   "license": "MIT",
+  "commands": [
+    {
+      "name": "tunnel",
+      "title": "Google Cloud SQL Tunnel",
+      "subtitle": "Google IAP",
+      "description": "Start or stop a Google Cloud SQL IAP tunnel.",
+      "mode": "menu-bar",
+      "interval": "1m",
+      "preferences": [
+        {
+          "name": "dbPrivateIp",
+          "title": "DB Private IP",
+          "type": "textfield",
+          "description": "Cloud SQL private IP address.",
+          "required": true
+        },
+        {
+          "name": "bastionInstance",
+          "title": "Bastion Instance",
+          "type": "textfield",
+          "description": "Compute Engine VM name for the IAP bastion.",
+          "required": true
+        },
+        {
+          "name": "bastionZone",
+          "title": "Bastion Zone",
+          "type": "textfield",
+          "description": "GCP zone containing the bastion VM (e.g. us-central1-a).",
+          "required": true
+        },
+        {
+          "name": "localPort",
+          "title": "Local Port",
+          "type": "textfield",
+          "description": "Local port to bind for the tunnel.",
+          "required": true
+        },
+        {
+          "name": "remotePort",
+          "title": "Remote Port",
+          "type": "textfield",
+          "description": "Remote database port to forward to.",
+          "required": true
+        },
+        {
+          "name": "gcloudPath",
+          "title": "gcloud Path (optional)",
+          "type": "textfield",
+          "description": "Optional absolute path to the gcloud binary."
+        }
+      ]
+    }
+  ],
   "dependencies": {
     "@raycast/api": "1.104.1",
     "react": "19.2.3"
@@ -32,6 +85,7 @@
     "husky": "9.1.7",
     "lint-staged": "16.2.7",
     "prettier": "3.8.0",
+    "typescript-eslint": "8.53.0",
     "vitest": "4.0.17",
     "typescript": "5.9.3"
   }
