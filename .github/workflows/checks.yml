@@ -1,0 +1,45 @@
+name: Checks
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+concurrency:
+  group: checks-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: 'read'
+  id-token: 'write'
+
+jobs:
+  checks:
+    name: Lint, Test, Build
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+
+      - name: Setup Just
+        uses: ./.github/actions/setup-just
+
+      - name: Setup Bun and install deps
+        uses: ./.github/actions/setup-bun
+
+      - name: Check Types
+        shell: bash
+        run: just --timestamp typecheck
+
+      - name: Run Linting
+        shell: bash
+        run: just --timestamp lint
+
+      - name: Run Testing
+        shell: bash
+        run: just --timestamp test
+
+      - name: Build Extensions
+        shell: bash
+        run: just --timestamp build

@@ -31,3 +31,8 @@ test *args:
 [group('build')]
 dev:
   bunx ray develop
+
+# Build Raycast extension
+[group('build')]
+build:
+  bunx ray build
