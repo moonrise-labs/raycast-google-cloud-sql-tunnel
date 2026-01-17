@@ -1,0 +1,43 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["github>moonrise-labs/renovate-config"],
+  "enabled": true,
+  "packageRules": [
+    {
+      "addLabels": ["node"],
+      "automerge": true,
+      "description": "Update Node.js production dependencies weekdays between 8am and 4pm",
+      "extends": [":semanticCommitTypeAll(feat)"],
+      "groupName": "Node.js dependencies",
+      "matchCategories": ["js", "node", "packageManager"],
+      "matchDepTypes": ["dependencies"],
+      "minimumReleaseAge": "7 days",
+      "prPriority": 2,
+      "schedule": ["* 8-16 * * 1-5"]
+    },
+    {
+      "addLabels": ["node"],
+      "automerge": true,
+      "description": "Update Node.js development dependencies weekdays between 8am and 4pm",
+      "extends": [":semanticCommitTypeAll(chore)"],
+      "groupName": "Node.js devDependencies",
+      "matchCategories": ["js"],
+      "matchDepTypes": ["devDependencies"],
+      "minimumReleaseAge": "7 days",
+      "prPriority": 1,
+      "schedule": ["* 8-16 * * 1-5"]
+    },
+    {
+      "addLabels": ["ci"],
+      "automerge": true,
+      "description": "Update GitHub Actions weekdays between 8am and 4pm",
+      "extends": [":semanticCommitTypeAll(chore)"],
+      "groupName": "GitHub Actions",
+      "groupSlug": "ci",
+      "matchCategories": ["ci"],
+      "minimumReleaseAge": "7 days",
+      "prPriority": 0,
+      "schedule": ["* 8-16 * * 1-5"]
+    }
+  ]
+}
